@@ -4,6 +4,7 @@ import { Complexity } from '../../json-ast-to-reports/interfaces/complexity.inte
 import { ComplexityType } from '../../json-ast-to-reports/enums/complexity-type.enum';
 import { ChartColor } from '../../json-ast-to-reports/enums/chart-color.enum';
 import { ComplexitiesByStatus } from '../../json-ast-to-reports/interfaces/complexities-by-status.interface';
+import { LanguageToJsonAst } from '../../languages-to-json-ast/language-to-json-ast';
 
 
 export var WINDOWS = false;
@@ -29,7 +30,7 @@ export class Options {
         type: ComplexityType.CYCLOMATIC,            // Sets the complexity type for this option (can't be overriden)
         warningThreshold: 5                         // A complexity strictly greater than warning threshold and lower or equal than errorThreshold will be seen as warning (can be overriden)
     };
-    static ignore: string[] = [];                   // The paths of the files or folders to ignore
+    static ignore: string[] = ['node_modules'];                   // The paths of the files or folders to ignore
     static pathCommand = '';                        // The path of the folder where the command-line was entered (can't be overriden)
     static pathFolderToAnalyze = './';              // The path of the folder to analyse (can be overriden)
     static pathGeneseNodeJs = '';                   // The path of the node_module Genese in the nodejs user environment (can't be overriden)
@@ -72,7 +73,8 @@ export class Options {
      */
     static setOptionsFromConfig(geneseConfigPath: string): void {
         const config = require(geneseConfigPath);
-        Options.ignore = getArrayOfPathsWithDotSlash(config.complexity?.ignore) ?? Options.ignore;
+        Options.ignore = config.complexity?.ignore ?? Options.ignore;
+        // Options.ignore = getArrayOfPathsWithDotSlash(config.complexity?.ignore) ?? Options.ignore;
         Options.pathFolderToAnalyze = config.complexity?.pathFolderToAnalyze ?? Options.pathFolderToAnalyze;
         Options.pathOutDir = config.complexity?.pathReports ?? Options.pathOutDir;
         Options.ignore.push(Options.pathOutDir);
@@ -84,6 +86,8 @@ export class Options {
      * @param path
      */
     static isIgnored(path: string) : boolean {
+        // console.log('IGNORRR', Options.ignore)
+        // console.log('PATH ELTTT', path, Options.ignore.includes(path))
         return  Options.ignore.includes(path);
     }
 

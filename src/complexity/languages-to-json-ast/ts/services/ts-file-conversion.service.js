@@ -48,6 +48,9 @@ class TsFileConversionService {
         if (children.length > 0) {
             astNode.children = children;
         }
+        if (astNode.name === 'tail') {
+            console.log('ASTNODDD', astNode.kind, astNode.name, astNode.type);
+        }
         if (astNode.type === 'function') {
             const cpxFactors = this.getCpxFactors(node);
             if (cpxFactors) {
@@ -90,7 +93,7 @@ class TsFileConversionService {
     // TODO: Refacto
     library(definition) {
         const path = definition.getSourceFile().getFilePath();
-        console.log('PATHHHH', path);
+        console.log('PATHHHH LIBRARY', path);
         return path.match(/typescript\/lib/) ? 'typescript' : undefined;
     }
 }

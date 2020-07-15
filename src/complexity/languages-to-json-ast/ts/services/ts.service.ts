@@ -1,6 +1,7 @@
 import { KindAliases } from '../const/kind-aliases';
-import { Node, SyntaxKind } from 'ts-morph';
+import { Identifier, Node, SyntaxKind } from 'ts-morph';
 import { IdentifierType } from '../../../core/interfaces/identifier-type.type';
+import * as chalk from 'chalk';
 
 /**
  * Service for operations on Node elements (ts-morph nodes)
@@ -44,13 +45,17 @@ export class Ts {
 
 
     static getType(node: Node): IdentifierType {
+        if (Ts.getName(node) === 'tail') {
+            const id = node as Identifier;
+            console.log(chalk.greenBright('TAILLL'), id.getDefinitions()?.[0]?.getSourceFile()?.getFilePath())
+        }
         if (!node.getSymbol()?.getFlags()) {
             return undefined;
         }
         switch (node.getKind()) {
             case SyntaxKind.Identifier:
             case SyntaxKind.Parameter:
-                return Ts.getIdentifierType(node.getType().getApparentType().getText());
+                return Ts.getIdentifierType(node.getType().getApparentType().getText()) ?? 'any';
             default:
                 return undefined;
         }

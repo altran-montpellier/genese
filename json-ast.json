@@ -1,349 +1,398 @@
 {
 	"astFolder": {
-		"path": "/Users/utilisateur/Documents/perso_gilles_fabre/projets/genese/genese/src/complexity/core/mocks/",
+		"path": "/Users/utilisateur/Documents/perso_gilles_fabre/projets/genese/genese-tests/",
 		"astFiles": [
+		],
+		"children": [
 			{
-				"name": "debug.mock.ts",
-				"text": "import * as _ from 'lodash';\n\nexport class DebugMock  {\n\n    method(a: string) {\n        const b: number[] = [1, 2];\n        const c = _.tail(b);\n        console.log('C = ', c)\n        return a.slice(0);\n    }\n\n}\n",
-				"astNode": {
-					"end": 213,
-					"kind": "SourceFile",
-					"pos": 0,
-					"start": 0,
-					"children": [
-						{
-							"end": 28,
-							"kind": "ImportDeclaration",
+				"path": "/Users/utilisateur/Documents/perso_gilles_fabre/projets/genese/genese-tests/.idea/",
+				"astFiles": [
+				],
+				"children": [
+					{
+						"path": "/Users/utilisateur/Documents/perso_gilles_fabre/projets/genese/genese-tests/.idea/inspectionProfiles/",
+						"astFiles": [
+						]
+					},
+					{
+						"path": "/Users/utilisateur/Documents/perso_gilles_fabre/projets/genese/genese-tests/.idea/sonarlint/",
+						"astFiles": [
+						],
+						"children": [
+							{
+								"path": "/Users/utilisateur/Documents/perso_gilles_fabre/projets/genese/genese-tests/.idea/sonarlint/issuestore/",
+								"astFiles": [
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"path": "/Users/utilisateur/Documents/perso_gilles_fabre/projets/genese/genese-tests/src/",
+				"astFiles": [
+					{
+						"name": "index.ts",
+						"text": "var _ = require('lodash');\n// import * as _ from 'lodash';\n\nclass IndexTest {\n\n\tmethod(a: string) {\n\t\tconst b: number[] = [1, 2];\n\t\tconst c = _.tail(b);\n\t\tconsole.log('C = ', c)\n\t\treturn a.slice(0);\n\t}\n}\n\nvar a = new IndexTest();\na.method('ZZZ')\n",
+						"astNode": {
+							"end": 246,
+							"kind": "SourceFile",
 							"pos": 0,
 							"start": 0,
 							"children": [
 								{
-									"end": 13,
-									"kind": "ImportClause",
-									"pos": 6,
-									"start": 7,
+									"end": 26,
+									"kind": "Keyword",
+									"pos": 0,
+									"start": 0,
 									"children": [
 										{
-											"end": 13,
-											"kind": "NamespaceImport",
-											"pos": 6,
-											"start": 7,
+											"end": 25,
+											"kind": "VariableDeclarationList",
+											"pos": 0,
+											"start": 0,
 											"children": [
 												{
-													"end": 13,
-													"kind": "Identifier",
-													"name": "_",
-													"pos": 11,
-													"start": 12
+													"end": 25,
+													"kind": "VariableDeclaration",
+													"pos": 3,
+													"start": 4,
+													"children": [
+														{
+															"end": 5,
+															"kind": "Identifier",
+															"name": "_",
+															"pos": 3,
+															"start": 4,
+															"type": "any"
+														},
+														{
+															"end": 25,
+															"kind": "CallExpression",
+															"pos": 7,
+															"start": 8,
+															"children": [
+																{
+																	"end": 15,
+																	"kind": "Identifier",
+																	"name": "require",
+																	"pos": 7,
+																	"start": 8,
+																	"type": "any"
+																},
+																{
+																	"end": 24,
+																	"kind": "Literal",
+																	"pos": 16,
+																	"start": 16
+																}
+															]
+														}
+													]
 												}
 											]
 										}
 									]
 								},
 								{
-									"end": 27,
-									"kind": "Literal",
-									"pos": 18,
-									"start": 19
-								}
-							]
-						},
-						{
-							"end": 212,
-							"kind": "ClassDeclaration",
-							"name": "DebugMock",
-							"pos": 28,
-							"start": 30,
-							"children": [
-								{
-									"end": 36,
-									"kind": "ExportKeyword",
-									"pos": 28,
-									"start": 30
-								},
-								{
-									"end": 52,
-									"kind": "Identifier",
-									"name": "DebugMock",
-									"pos": 42,
-									"start": 43
-								},
-								{
-									"end": 209,
-									"kind": "MethodDeclaration",
-									"name": "method",
-									"pos": 55,
-									"start": 61,
+									"end": 203,
+									"kind": "ClassDeclaration",
+									"name": "IndexTest",
+									"pos": 26,
+									"start": 60,
 									"children": [
 										{
-											"end": 67,
+											"end": 75,
 											"kind": "Identifier",
-											"name": "method",
-											"pos": 55,
-											"start": 61,
-											"type": "function"
+											"name": "IndexTest",
+											"pos": 65,
+											"start": 66,
+											"type": "any"
 										},
 										{
-											"end": 77,
-											"kind": "Parameter",
-											"name": "a",
-											"pos": 68,
-											"start": 68,
-											"type": "string",
+											"end": 201,
+											"kind": "MethodDeclaration",
+											"name": "method",
+											"pos": 77,
+											"start": 80,
 											"children": [
 												{
-													"end": 69,
+													"end": 86,
 													"kind": "Identifier",
-													"name": "a",
-													"pos": 68,
-													"start": 68,
-													"type": "string"
+													"name": "method",
+													"pos": 77,
+													"start": 80,
+													"type": "function"
 												},
 												{
-													"end": 77,
-													"kind": "Keyword",
-													"pos": 70,
-													"start": 71
-												}
-											]
-										},
-										{
-											"end": 209,
-											"kind": "Block",
-											"pos": 78,
-											"start": 79,
-											"children": [
-												{
-													"end": 116,
-													"kind": "Keyword",
-													"pos": 80,
-													"start": 89,
+													"end": 96,
+													"kind": "Parameter",
+													"name": "a",
+													"pos": 87,
+													"start": 87,
+													"type": "string",
 													"children": [
 														{
-															"end": 115,
-															"kind": "VariableDeclarationList",
-															"pos": 80,
-															"start": 89,
-															"children": [
-																{
-																	"end": 115,
-																	"kind": "VariableDeclaration",
-																	"pos": 94,
-																	"start": 95,
-																	"children": [
-																		{
-																			"end": 96,
-																			"kind": "Identifier",
-																			"name": "b",
-																			"pos": 94,
-																			"start": 95
-																		},
-																		{
-																			"end": 106,
-																			"kind": "ArrayType",
-																			"pos": 97,
-																			"start": 98,
-																			"children": [
-																				{
-																					"end": 104,
-																					"kind": "NumberKeyword",
-																					"pos": 97,
-																					"start": 98
-																				}
-																			]
-																		},
-																		{
-																			"end": 115,
-																			"kind": "ArrayLiteralExpression",
-																			"pos": 108,
-																			"start": 109,
-																			"children": [
-																				{
-																					"end": 111,
-																					"kind": "Literal",
-																					"pos": 110,
-																					"start": 110
-																				},
-																				{
-																					"end": 114,
-																					"kind": "Literal",
-																					"pos": 112,
-																					"start": 113
-																				}
-																			]
-																		}
-																	]
-																}
-															]
+															"end": 88,
+															"kind": "Identifier",
+															"name": "a",
+															"pos": 87,
+															"start": 87,
+															"type": "string"
+														},
+														{
+															"end": 96,
+															"kind": "Keyword",
+															"pos": 89,
+															"start": 90
 														}
 													]
 												},
 												{
-													"end": 145,
-													"kind": "Keyword",
-													"pos": 116,
-													"start": 125,
+													"end": 201,
+													"kind": "Block",
+													"pos": 97,
+													"start": 98,
 													"children": [
 														{
-															"end": 144,
-															"kind": "VariableDeclarationList",
-															"pos": 116,
-															"start": 125,
+															"end": 129,
+															"kind": "Keyword",
+															"pos": 99,
+															"start": 102,
 															"children": [
 																{
-																	"end": 144,
-																	"kind": "VariableDeclaration",
-																	"pos": 130,
-																	"start": 131,
+																	"end": 128,
+																	"kind": "VariableDeclarationList",
+																	"pos": 99,
+																	"start": 102,
 																	"children": [
 																		{
-																			"end": 132,
-																			"kind": "Identifier",
-																			"name": "c",
-																			"pos": 130,
-																			"start": 131
-																		},
-																		{
-																			"end": 144,
-																			"kind": "CallExpression",
-																			"pos": 134,
-																			"start": 135,
+																			"end": 128,
+																			"kind": "VariableDeclaration",
+																			"pos": 107,
+																			"start": 108,
 																			"children": [
 																				{
-																					"end": 141,
-																					"kind": "PropertyAccessExpression",
-																					"pos": 134,
-																					"start": 135,
+																					"end": 109,
+																					"kind": "Identifier",
+																					"name": "b",
+																					"pos": 107,
+																					"start": 108,
+																					"type": "any"
+																				},
+																				{
+																					"end": 119,
+																					"kind": "ArrayType",
+																					"pos": 110,
+																					"start": 111,
 																					"children": [
 																						{
-																							"end": 136,
-																							"kind": "Identifier",
-																							"name": "_",
-																							"pos": 134,
-																							"start": 135
-																						},
-																						{
-																							"end": 141,
-																							"kind": "Identifier",
-																							"name": "tail",
-																							"pos": 137,
-																							"start": 137,
-																							"type": "function"
+																							"end": 117,
+																							"kind": "NumberKeyword",
+																							"pos": 110,
+																							"start": 111
 																						}
 																					]
 																				},
 																				{
-																					"end": 143,
-																					"kind": "Identifier",
-																					"name": "b",
-																					"pos": 142,
-																					"start": 142
+																					"end": 128,
+																					"kind": "ArrayLiteralExpression",
+																					"pos": 121,
+																					"start": 122,
+																					"children": [
+																						{
+																							"end": 124,
+																							"kind": "Literal",
+																							"pos": 123,
+																							"start": 123
+																						},
+																						{
+																							"end": 127,
+																							"kind": "Literal",
+																							"pos": 125,
+																							"start": 126
+																						}
+																					]
 																				}
 																			]
 																		}
 																	]
 																}
 															]
-														}
-													]
-												},
-												{
-													"end": 176,
-													"kind": "ExpressionStatement",
-													"pos": 145,
-													"start": 154,
-													"children": [
+														},
 														{
-															"end": 176,
-															"kind": "CallExpression",
-															"pos": 145,
-															"start": 154,
+															"end": 152,
+															"kind": "Keyword",
+															"pos": 129,
+															"start": 132,
 															"children": [
 																{
-																	"end": 165,
-																	"kind": "PropertyAccessExpression",
-																	"pos": 145,
-																	"start": 154,
+																	"end": 151,
+																	"kind": "VariableDeclarationList",
+																	"pos": 129,
+																	"start": 132,
 																	"children": [
 																		{
-																			"end": 161,
-																			"kind": "Identifier",
-																			"name": "console",
-																			"pos": 145,
-																			"start": 154
-																		},
-																		{
-																			"end": 165,
-																			"kind": "Identifier",
-																			"name": "log",
-																			"pos": 162,
-																			"start": 162
+																			"end": 151,
+																			"kind": "VariableDeclaration",
+																			"pos": 137,
+																			"start": 138,
+																			"children": [
+																				{
+																					"end": 139,
+																					"kind": "Identifier",
+																					"name": "c",
+																					"pos": 137,
+																					"start": 138,
+																					"type": "any"
+																				},
+																				{
+																					"end": 151,
+																					"kind": "CallExpression",
+																					"pos": 141,
+																					"start": 142,
+																					"children": [
+																						{
+																							"end": 148,
+																							"kind": "PropertyAccessExpression",
+																							"pos": 141,
+																							"start": 142,
+																							"children": [
+																								{
+																									"end": 143,
+																									"kind": "Identifier",
+																									"name": "_",
+																									"pos": 141,
+																									"start": 142,
+																									"type": "any"
+																								},
+																								{
+																									"end": 148,
+																									"kind": "Identifier",
+																									"name": "tail",
+																									"pos": 144,
+																									"start": 144
+																								}
+																							]
+																						},
+																						{
+																							"end": 150,
+																							"kind": "Identifier",
+																							"name": "b",
+																							"pos": 149,
+																							"start": 149,
+																							"type": "any"
+																						}
+																					]
+																				}
+																			]
 																		}
 																	]
-																},
-																{
-																	"end": 172,
-																	"kind": "Literal",
-																	"pos": 166,
-																	"start": 166
-																},
-																{
-																	"end": 175,
-																	"kind": "Identifier",
-																	"name": "c",
-																	"pos": 173,
-																	"start": 174
 																}
 															]
-														}
-													]
-												},
-												{
-													"end": 203,
-													"kind": "Keyword",
-													"pos": 176,
-													"start": 185,
-													"children": [
+														},
 														{
-															"end": 202,
-															"kind": "CallExpression",
-															"pos": 191,
-															"start": 192,
+															"end": 177,
+															"kind": "ExpressionStatement",
+															"pos": 152,
+															"start": 155,
 															"children": [
 																{
-																	"end": 199,
-																	"kind": "PropertyAccessExpression",
-																	"pos": 191,
-																	"start": 192,
+																	"end": 177,
+																	"kind": "CallExpression",
+																	"pos": 152,
+																	"start": 155,
 																	"children": [
 																		{
-																			"end": 193,
-																			"kind": "Identifier",
-																			"name": "a",
-																			"pos": 191,
-																			"start": 192,
-																			"type": "string"
+																			"end": 166,
+																			"kind": "PropertyAccessExpression",
+																			"pos": 152,
+																			"start": 155,
+																			"children": [
+																				{
+																					"end": 162,
+																					"kind": "Identifier",
+																					"name": "console",
+																					"pos": 152,
+																					"start": 155,
+																					"type": "any"
+																				},
+																				{
+																					"end": 166,
+																					"kind": "Identifier",
+																					"name": "log",
+																					"pos": 163,
+																					"start": 163,
+																					"type": "any"
+																				}
+																			]
 																		},
 																		{
-																			"end": 199,
+																			"end": 173,
+																			"kind": "Literal",
+																			"pos": 167,
+																			"start": 167
+																		},
+																		{
+																			"end": 176,
 																			"kind": "Identifier",
-																			"name": "slice",
-																			"pos": 194,
-																			"start": 194,
-																			"type": "function",
-																			"cpxFactors": {
-																				"use": {
-																					"method": 1
-																				}
-																			}
+																			"name": "c",
+																			"pos": 174,
+																			"start": 175,
+																			"type": "any"
 																		}
 																	]
-																},
+																}
+															]
+														},
+														{
+															"end": 198,
+															"kind": "Keyword",
+															"pos": 177,
+															"start": 180,
+															"children": [
 																{
-																	"end": 201,
-																	"kind": "Literal",
-																	"pos": 200,
-																	"start": 200
+																	"end": 197,
+																	"kind": "CallExpression",
+																	"pos": 186,
+																	"start": 187,
+																	"children": [
+																		{
+																			"end": 194,
+																			"kind": "PropertyAccessExpression",
+																			"pos": 186,
+																			"start": 187,
+																			"children": [
+																				{
+																					"end": 188,
+																					"kind": "Identifier",
+																					"name": "a",
+																					"pos": 186,
+																					"start": 187,
+																					"type": "string"
+																				},
+																				{
+																					"end": 194,
+																					"kind": "Identifier",
+																					"name": "slice",
+																					"pos": 189,
+																					"start": 189,
+																					"type": "function",
+																					"cpxFactors": {
+																						"use": {
+																							"method": 1
+																						}
+																					}
+																				}
+																			]
+																		},
+																		{
+																			"end": 196,
+																			"kind": "Literal",
+																			"pos": 195,
+																			"start": 195
+																		}
+																	]
 																}
 															]
 														}
@@ -352,17 +401,111 @@
 											]
 										}
 									]
+								},
+								{
+									"end": 229,
+									"kind": "Keyword",
+									"pos": 203,
+									"start": 205,
+									"children": [
+										{
+											"end": 228,
+											"kind": "VariableDeclarationList",
+											"pos": 203,
+											"start": 205,
+											"children": [
+												{
+													"end": 228,
+													"kind": "VariableDeclaration",
+													"pos": 208,
+													"start": 209,
+													"children": [
+														{
+															"end": 210,
+															"kind": "Identifier",
+															"name": "a",
+															"pos": 208,
+															"start": 209,
+															"type": "any"
+														},
+														{
+															"end": 228,
+															"kind": "Keyword",
+															"pos": 212,
+															"start": 213,
+															"children": [
+																{
+																	"end": 226,
+																	"kind": "Identifier",
+																	"name": "IndexTest",
+																	"pos": 216,
+																	"start": 217,
+																	"type": "any"
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"end": 245,
+									"kind": "ExpressionStatement",
+									"pos": 229,
+									"start": 230,
+									"children": [
+										{
+											"end": 245,
+											"kind": "CallExpression",
+											"pos": 229,
+											"start": 230,
+											"children": [
+												{
+													"end": 238,
+													"kind": "PropertyAccessExpression",
+													"pos": 229,
+													"start": 230,
+													"children": [
+														{
+															"end": 231,
+															"kind": "Identifier",
+															"name": "a",
+															"pos": 229,
+															"start": 230,
+															"type": "any"
+														},
+														{
+															"end": 238,
+															"kind": "Identifier",
+															"name": "method",
+															"pos": 232,
+															"start": 232,
+															"type": "function"
+														}
+													]
+												},
+												{
+													"end": 244,
+													"kind": "Literal",
+													"pos": 239,
+													"start": 239
+												}
+											]
+										}
+									]
+								},
+								{
+									"end": 246,
+									"kind": "EndOfFileToken",
+									"pos": 245,
+									"start": 246
 								}
 							]
-						},
-						{
-							"end": 213,
-							"kind": "EndOfFileToken",
-							"pos": 212,
-							"start": 213
 						}
-					]
-				}
+					}
+				]
 			}
 		]
 	}

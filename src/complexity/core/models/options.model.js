@@ -45,7 +45,8 @@ class Options {
     static setOptionsFromConfig(geneseConfigPath) {
         var _a, _b, _c, _d, _e, _f;
         const config = require(geneseConfigPath);
-        Options.ignore = (_b = file_service_1.getArrayOfPathsWithDotSlash((_a = config.complexity) === null || _a === void 0 ? void 0 : _a.ignore)) !== null && _b !== void 0 ? _b : Options.ignore;
+        Options.ignore = (_b = (_a = config.complexity) === null || _a === void 0 ? void 0 : _a.ignore) !== null && _b !== void 0 ? _b : Options.ignore;
+        // Options.ignore = getArrayOfPathsWithDotSlash(config.complexity?.ignore) ?? Options.ignore;
         Options.pathFolderToAnalyze = (_d = (_c = config.complexity) === null || _c === void 0 ? void 0 : _c.pathFolderToAnalyze) !== null && _d !== void 0 ? _d : Options.pathFolderToAnalyze;
         Options.pathOutDir = (_f = (_e = config.complexity) === null || _e === void 0 ? void 0 : _e.pathReports) !== null && _f !== void 0 ? _f : Options.pathOutDir;
         Options.ignore.push(Options.pathOutDir);
@@ -55,6 +56,8 @@ class Options {
      * @param path
      */
     static isIgnored(path) {
+        // console.log('IGNORRR', Options.ignore)
+        // console.log('PATH ELTTT', path, Options.ignore.includes(path))
         return Options.ignore.includes(path);
     }
     /**
@@ -85,7 +88,7 @@ Options.cyclomaticCpx = {
     type: complexity_type_enum_1.ComplexityType.CYCLOMATIC,
     warningThreshold: 5 // A complexity strictly greater than warning threshold and lower or equal than errorThreshold will be seen as warning (can be overriden)
 };
-Options.ignore = []; // The paths of the files or folders to ignore
+Options.ignore = ['node_modules']; // The paths of the files or folders to ignore
 Options.pathCommand = ''; // The path of the folder where the command-line was entered (can't be overriden)
 Options.pathFolderToAnalyze = './'; // The path of the folder to analyse (can be overriden)
 Options.pathGeneseNodeJs = ''; // The path of the node_module Genese in the nodejs user environment (can't be overriden)

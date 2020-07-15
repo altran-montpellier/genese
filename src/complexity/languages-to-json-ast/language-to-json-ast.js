@@ -8,7 +8,7 @@ const json_service_1 = require("./json.service");
 const file_service_1 = require("../core/services/file.service");
 const ts_morph_1 = require("ts-morph");
 const weights_service_1 = require("./ts/libraries-weights/weights.service");
-exports.LIMIT_CONVERSIONS = true;
+exports.LIMIT_CONVERSIONS = false;
 exports.DEV_MOCK = '/Users/utilisateur/Documents/perso_gilles_fabre/projets/genese/genese/src/complexity/core/mocks/debug.mock.ts';
 exports.WEIGHTS = weights_service_1.WeightsService.merge();
 exports.project = new ts_morph_1.Project();
@@ -23,7 +23,11 @@ class LanguageToJsonAst {
      */
     static start(pathToAnalyze, language) {
         console.log(chalk.blueBright('STARTS JSON AST GENERATION'));
-        exports.project.addSourceFilesAtPaths(`${pathToAnalyze}/**/*.ts`);
+        exports.project.addSourceFilesAtPaths(`${pathToAnalyze}/**/*{.d.ts,.ts}`);
+        exports.project.addSourceFilesAtPaths(`${pathToAnalyze}/**/*.js`);
+        // console.log('PROJECT ADD SRCCC', `${pathToAnalyze}/**/*{.d.ts,.ts}`)
+        const zzz = exports.project.getSourceFiles().map(f => f.getFilePath());
+        // console.log('PROJECTT FILE', zzz);
         let jsonAst;
         switch (language) {
             case language_enum_1.Language.TS:

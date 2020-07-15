@@ -6,7 +6,6 @@ import { AstNodeInterface } from '../../../core/interfaces/ast/ast-node.interfac
 import { project, WEIGHTS } from '../../language-to-json-ast';
 import { DefinitionInfo, Identifier, Node, SourceFile } from 'ts-morph';
 import { SyntaxKind } from '../../../core/enum/syntax-kind.enum';
-import { WeightsService } from '../libraries-weights/weights.service';
 import { CpxFactorsInterface } from '../../../core/interfaces/cpx-factors.interface';
 
 /**
@@ -55,6 +54,9 @@ export class TsFileConversionService {
         }
         if (children.length > 0) {
             astNode.children = children;
+        }
+        if (astNode.name === 'tail') {
+            console.log('ASTNODDD', astNode.kind, astNode.name, astNode.type)
         }
         if (astNode.type === 'function') {
             const cpxFactors: CpxFactorsInterface = this.getCpxFactors(node);
@@ -109,7 +111,7 @@ export class TsFileConversionService {
     // TODO: Refacto
     library(definition: DefinitionInfo): string {
         const path = definition.getSourceFile().getFilePath();
-        console.log('PATHHHH', path)
+        console.log('PATHHHH LIBRARY', path)
         return path.match(/typescript\/lib/) ? 'typescript' : undefined;
     }
 

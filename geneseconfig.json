@@ -13,7 +13,8 @@
             ".idea",
             "api",
             "/node_modules",
-            "./genese"
+            "./genese",
+            "/Users/utilisateur/Documents/perso_gilles_fabre/projets/genese/genese-tests/node_modules"
         ],
         "pathFolderToAnalyze": "/Users/utilisateur/Documents/perso_gilles_fabre/projets/genese/genese/src/complexity/core/mocks",
         "pathReports": "./genese"

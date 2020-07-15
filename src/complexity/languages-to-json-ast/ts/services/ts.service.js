@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Ts = void 0;
 const kind_aliases_1 = require("../const/kind-aliases");
 const ts_morph_1 = require("ts-morph");
+const chalk = require("chalk");
 /**
  * Service for operations on Node elements (ts-morph nodes)
  */
@@ -40,16 +41,18 @@ class Ts {
         }
     }
     static getType(node) {
-        var _a;
-        // console.log('GET TYPPPP', node.getKindName(), node.getSymbol()?.getFlags())
-        // console.log('GET TYPPPP 2', node.getKind())
-        if (!((_a = node.getSymbol()) === null || _a === void 0 ? void 0 : _a.getFlags())) {
+        var _a, _b, _c, _d, _e;
+        if (Ts.getName(node) === 'tail') {
+            const id = node;
+            console.log(chalk.greenBright('TAILLL'), (_c = (_b = (_a = id.getDefinitions()) === null || _a === void 0 ? void 0 : _a[0]) === null || _b === void 0 ? void 0 : _b.getSourceFile()) === null || _c === void 0 ? void 0 : _c.getFilePath());
+        }
+        if (!((_d = node.getSymbol()) === null || _d === void 0 ? void 0 : _d.getFlags())) {
             return undefined;
         }
         switch (node.getKind()) {
             case ts_morph_1.SyntaxKind.Identifier:
             case ts_morph_1.SyntaxKind.Parameter:
-                return Ts.getIdentifierType(node.getType().getApparentType().getText());
+                return (_e = Ts.getIdentifierType(node.getType().getApparentType().getText())) !== null && _e !== void 0 ? _e : 'any';
             default:
                 return undefined;
         }
